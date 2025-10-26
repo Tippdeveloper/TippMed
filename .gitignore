@@ -11,8 +11,6 @@ package-lock.json
 
 # Cordova build directories
 platforms/
-plugins/
-www/
 merges/
 
 # Build outputs
