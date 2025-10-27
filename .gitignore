@@ -12,6 +12,7 @@ package-lock.json
 # Cordova build directories
 platforms/
 merges/
+fontawesome/
 
 # Build outputs
 dist/

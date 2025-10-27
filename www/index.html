@@ -1,50 +1,80 @@
 <!DOCTYPE html>
-<!--
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
 
-    http://www.apache.org/licenses/LICENSE-2.0
 
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-     KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
--->
-<html>
-    <head>
-        <meta charset="utf-8">
-        <!--
-        Customize this policy to fit your own app's needs. For more guidance, please refer to the docs:
-            https://cordova.apache.org/docs/en/latest/
-        Some notes:
-            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
-            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
-                * Enable inline JS: add 'unsafe-inline' to default-src
-        -->
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
-        <meta name="format-detection" content="telephone=no">
-        <meta name="msapplication-tap-highlight" content="no">
-        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
-        <meta name="color-scheme" content="light dark">
-        <link rel="stylesheet" href="css/index.css">
-        <title>Hello World</title>
-    </head>
-    <body>
-        <div class="app">
-            <h1>Apache Cordova</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
+<head>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+    <meta name="color-scheme" content="light dark">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="fontawesome/css/all.min.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="js/jquery.qrcode.min.js"></script>
+    <script type="module" src="js/main.js"></script>
+
+    <title>TIPP Med</title>
+</head>
+
+<body>
+    <!-- popoup -->
+    
+    <div id="versao"></div>
+    <div class="toast-container">
+        <div id="animatedToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-bs-autohide="false">
+          <div class="toast-header">
+            <strong class="me-auto">Título</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+          </div>
+          <div class="toast-body">
+            Corpo da mensagem do toast.
+          </div>
+        </div>
+      </div>
+    <div id="meuModal">
+
+    </div>
+	
+    <div id="meuLoading">
+    <div id="toast"><i id="iconToast"></i><span class="textToast"></span></div>
+    <div class="listaRestaurante col-10 offset-1"></div>
+    <div id="termos"></div>   
+    <div class="spinner-border text-light" role="status">
+            <span class="sr-only">Loading...</span>
+
+        </div>
+        <!-- popup do first login -->
+        <div class="row" id="changePass">
+            <div class="container-fluid right-inner-addon">
+                <h3 class="text-center">ALTERE SUA SENHA</h3>
+                <input type="password" class="form-control" placeholder="Digite a senha atual" id="oldPassword">
+                <i id="pass_0" class="fa fa-eye" ></i>
+                <input type="password" class="form-control" placeholder="Digite sua nova senha" id="password">
+                <i id="pass_1" class="fa fa-eye" ></i>
+                
+                <input type="password" class="form-control" placeholder="Redigite sua nova senha" id="password_confirmation">
+                <i class="fa fa-eye" id="pass_2"></i>
+                <input type="checkbox" id="check"><div class="termos">Li e aceito os termos</div>
+                <div class="enviaPass text-center">Atualizar</div>
             </div>
         </div>
-        <script src="cordova.js"></script>
-        <script src="js/index.js"></script>
-    </body>
+        <div class="text-center" id="textoLoading"></div>
+    </div>
+
+    <!--  -->
+    <div id="app2">
+        </div>
+        <section class="privacy">Politica de privacidade!</section>
+    <footer id="footer">
+        
+        <img src="img/tipp.png">
+    </footer>
+    
+    <script src="cordova.js"></script>
+
+</body>
+
 </html>
